@@ -1,3 +1,10 @@
+html, body {
+  font-size: calc(16px * var(--font-scale, 1));
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, span, div, button, input, label, select, option, th, td, li, ul, ol, .grid-col, .tradingview-widget-container, .grid-ticker, .main-grid-container {
+  font-size: calc(1em * var(--font-scale, 1));
+}
 /* Grid layout for the main container */
 .main-grid-container {
   display: grid;
