@@ -7,63 +7,65 @@
     <script src="script.js"></script>
   </head>
   <body>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/ICMARKETS-XBRUSD/?exchange=ICMARKETS" rel="noopener nofollow" target="_blank"><span class="blue-text">XBRUSD chart by TradingView</span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-  {
-  "symbol": "ICMARKETS:XBRUSD",
-  "chartOnly": false,
-  "dateRange": "12M",
-  "noTimeScale": false,
-  "colorTheme": "light",
-  "isTransparent": false,
-  "locale": "en",
-  "largeChartUrl": "https://www.tradingview.com/chart/?symbol=FUSIONMARKETS%3AXBRUSD",
-  "width": "100%",
-  "autosize": true,
-  "height": "100%"
-}
-  </script>
-</div>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Ticker tape by TradingView</span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {
-      "proName": "CMCMARKETS:EURUSD",
-      "title": "EUR USD"
-    },
-    {
-      "proName": "CMCMARKETS:EURGBP",
-      "title": "EUR GBP"
-    },
-    {
-      "proName": "GOMARKETS:DAX40",
-      "title": "DAX40"
-    },
-    {
-      "proName": "GOMARKETS:FTSE100",
-      "title": "FTSE100"
-    },
-    {
-      "proName": "XETR:UN0",
-      "title": "UNIPER"
-    }
-  ],
-  "colorTheme": "light",
-  "locale": "en",
-  "largeChartUrl": "",
-  "isTransparent": false,
-  "showSymbolLogo": true,
-  "displayMode": "compact"
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
+    <div class="main-grid-container">
+      <!-- Row 1: Ticker tape in its own container -->
+      <div class="grid-row-1">
+        <div class="grid-ticker">
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Ticker tape by TradingView</span></a></div>
+            <script type="text/javascript">
+              window.tvTickerTapeWidgetOptions = {
+                symbols: [
+                  { proName: "CMCMARKETS:EURUSD", title: "EUR USD" },
+                  { proName: "CMCMARKETS:EURGBP", title: "EUR GBP" },
+                  { proName: "GOMARKETS:DAX40", title: "DAX40" },
+                  { proName: "GOMARKETS:FTSE100", title: "FTSE100" },
+                  { proName: "XETR:UN0", title: "UNIPER" }
+                ],
+                colorTheme: "light",
+                locale: "en",
+                largeChartUrl: "",
+                isTransparent: false,
+                showSymbolLogo: true,
+                displayMode: "compact"
+              };
+            </script>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async></script>
+          </div>
+        </div>
+      </div>
+      <!-- Main grid row: 2 iframes and XBRUSD widget -->
+      <div class="grid-main">
+        <div class="grid-col grid-col-1">
+          <iframe src="https://haltestellenmonitor.vrr.de/?id=woXOLBBlPWG+hqVedT7+ug==#/monitor" width="100%" height="400" style="border:none;" title="Haltestellenmonitor Widget"></iframe>
+        </div>
+        <div class="grid-col grid-col-2">
+          <iframe src="https://uniper.signage-server.de/uniper-campus-capricorn/web-app/" width="100%" height="400" style="border:none;" title="Uniper Campus Capricorn Widget"></iframe>
+        </div>
+        <div class="grid-col grid-col-3">
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/ICMARKETS-XBRUSD/?exchange=ICMARKETS" rel="noopener nofollow" target="_blank"><span class="blue-text">XBRUSD chart by TradingView</span></a></div>
+            <script type="text/javascript">
+              window.tvMiniSymbolWidgetOptions = {
+                symbol: "ICMARKETS:XBRUSD",
+                chartOnly: false,
+                dateRange: "12M",
+                noTimeScale: false,
+                colorTheme: "light",
+                isTransparent: false,
+                locale: "en",
+                largeChartUrl: "https://www.tradingview.com/chart/?symbol=FUSIONMARKETS%3AXBRUSD",
+                width: "100%",
+                autosize: true,
+                height: "400"
+              };
+            </script>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async></script>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
