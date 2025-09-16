@@ -86,7 +86,7 @@
             }
             const start = getDateString(-1); // yesterday
             const end = getDateString(1);   // tomorrow
-            const apiUrl = `https://proxy.corsfix.com/?url=https://api.energy-charts.info/price?bzn=DE-LU&start=${start}&end=${end}`;
+            const apiUrl = `https://corsproxy.io/?url=https://api.energy-charts.info/price?bzn=DE-LU&start=${start}&end=${end}`;
             fetch(apiUrl, {
               headers: { 'accept': 'application/json' }
             })
